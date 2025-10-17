@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Interactive Demo - Qualia Design System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Simplified version of your button demo for GitHub Pages */
+        :root {
+            --qualia-green: #6DC278;
+            --interactive-01: #1A874F;
+            --green-700: #0D381F;
+            --black-500: #757575;
+            --black-600: #595A5C;
+            --black-75: #EDEDED;
+            --black-300: #A1A1A1;
+            --red-600: #BD1C21;
+            --red-700: #84161F;
+            --red-800: #561216;
+            --blue-600: #17598F;
+            --blue-700: #0F3D57;
+            --blue-800: #08212C;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f8f9fa;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .header h1 {
+            color: var(--interactive-01);
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .demo-section {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .demo-section h2 {
+            margin-top: 0;
+            color: #333;
+        }
+
+        .button-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+            margin: 20px 0;
+        }
+
+        .qualia-btn {
+            font-family: 'Lato', sans-serif;
+            font-weight: 500;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border-radius: 8px;
+            padding: 12px 24px;
+            font-size: 16px;
+        }
+
+        .qualia-btn:focus {
+            outline: 2px solid var(--interactive-01);
+            outline-offset: 2px;
+        }
+
+        /* Primary Button */
+        .qualia-btn--primary {
+            background: var(--interactive-01);
+            color: white;
+        }
+
+        .qualia-btn--primary:hover {
+            background: var(--green-700);
+        }
+
+        /* Secondary Button */
+        .qualia-btn--secondary {
+            background: var(--black-75);
+            color: #333;
+            border: 1px solid #ddd;
+        }
+
+        .qualia-btn--secondary:hover {
+            background: #ddd;
+        }
+
+        /* Destructive Button */
+        .qualia-btn--destructive {
+            background: var(--red-600);
+            color: white;
+        }
+
+        .qualia-btn--destructive:hover {
+            background: var(--red-700);
+        }
+
+        /* Success Button */
+        .qualia-btn--success {
+            background: var(--interactive-01);
+            color: white;
+        }
+
+        /* AI Button */
+        .qualia-btn--ai {
+            background: var(--blue-600);
+            color: white;
+        }
+
+        .qualia-btn--ai:hover {
+            background: var(--blue-700);
+        }
+
+        /* Size variants */
+        .qualia-btn--small {
+            padding: 8px 16px;
+            font-size: 14px;
+        }
+
+        .qualia-btn--large {
+            padding: 16px 32px;
+            font-size: 18px;
+        }
+
+        .code-example {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+        }
+
+        .code-example pre {
+            margin: 0;
+            font-family: 'Monaco', 'Menlo', monospace;
+            font-size: 14px;
+            color: #333;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 20px;
+            color: var(--interactive-01);
+            text-decoration: none;
+        }
+
+        .back-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <a href="./index.html" class="back-link">← Back to Tokens</a>
+        
+        <div class="header">
+            <h1>🔘 Button Interactive Demo</h1>
+            <p>Explore all button variants and their usage patterns</p>
+        </div>
+
+        <div class="demo-section">
+            <h2>Button Variants</h2>
+            <p>Hover over buttons to see their interaction states:</p>
+            
+            <div class="button-grid">
+                <button class="qualia-btn qualia-btn--primary">Primary Button</button>
+                <button class="qualia-btn qualia-btn--secondary">Secondary Button</button>
+                <button class="qualia-btn qualia-btn--destructive">Destructive Button</button>
+                <button class="qualia-btn qualia-btn--success">Success Button</button>
+                <button class="qualia-btn qualia-btn--ai">AI Button</button>
+            </div>
+        </div>
+
+        <div class="demo-section">
+            <h2>Button Sizes</h2>
+            <div class="button-grid">
+                <button class="qualia-btn qualia-btn--primary qualia-btn--small">Small</button>
+                <button class="qualia-btn qualia-btn--primary">Medium (Default)</button>
+                <button class="qualia-btn qualia-btn--primary qualia-btn--large">Large</button>
+            </div>
+        </div>
+
+        <div class="demo-section">
+            <h2>Usage Guidelines</h2>
+            <h3>When to Use Each Variant</h3>
+            <ul>
+                <li><strong>Primary:</strong> Main call-to-action, limit to one per view</li>
+                <li><strong>Secondary:</strong> Supporting actions, cancel buttons</li>
+                <li><strong>Destructive:</strong> Delete actions, permanent changes</li>
+                <li><strong>Success:</strong> Confirm actions, save changes</li>
+                <li><strong>AI:</strong> AI-powered features, smart suggestions</li>
+            </ul>
+        </div>
+
+        <div class="demo-section">
+            <h2>React Code Example</h2>
+            <div class="code-example">
+                <pre><code>import Button from './Button';
+
+// Primary action
+&lt;Button variant="primary" size="medium"&gt;
+  Save Changes
+&lt;/Button&gt;
+
+// Secondary action  
+&lt;Button variant="secondary"&gt;
+  Cancel
+&lt;/Button&gt;
+
+// Destructive action
+&lt;Button variant="destructive"&gt;
+  Delete Account
+&lt;/Button&gt;</code></pre>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
