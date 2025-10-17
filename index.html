@@ -6,104 +6,341 @@
     <title>Qualia Design Tokens - Interactive Reference</title>
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Your complete CSS from tokens-final-v4.html will go here */
-        /* Design Tokens - CSS Custom Properties (from JSON) */
+        /* Design Tokens - From your comprehensive system */
         :root {
             --qualia-green: #6DC278;
-            --interactive-01: #1A874F; /* Green/500 - Main Brand Green */
+            --interactive-01: #1A874F;
             
             /* Black Scale */
-            --black-25: #FAFAFA;
-            --black-50: #F5F5F5;
-            --black-75: #EDEDED;
-            --black-100: #E8E8E8;
-            --black-200: #D1D1D1;
-            --black-300: #A1A1A1;
-            --black-400: #8A8A8A;
-            --black-500: #757575;
-            --black-600: #595A5C;
-            --black-700: #404042;
-            --black-800: #292A2B;
-            --black-900: #212122;
-            --black-1000: #080808;
+            --black-25: #FAFAFA; --black-50: #F5F5F5; --black-75: #EDEDED;
+            --black-100: #E8E8E8; --black-200: #D1D1D1; --black-300: #A1A1A1;
+            --black-400: #8A8A8A; --black-500: #757575; --black-600: #595A5C;
+            --black-700: #404042; --black-800: #292A2B; --black-900: #212122; --black-1000: #080808;
             
             /* Green Scale */
-            --green-100: #C4EBD4;
-            --green-200: #A1DEB8;
-            --green-300: #78D29C;
-            --green-400: #57C487;
-            --green-500: #1A874F;
-            --green-600: #125930;
-            --green-700: #0D381F;
-            --green-800: #082312;
-            --green-900: #051708;
+            --green-100: #C4EBD4; --green-200: #A1DEB8; --green-300: #78D29C; --green-400: #57C487;
+            --green-500: #1A874F; --green-600: #125930; --green-700: #0D381F; --green-800: #082312; --green-900: #051708;
             
-            /* Blue Scale */
-            --blue-100: #BADAFA;
-            --blue-200: #ADD1F5;
-            --blue-300: #8ABAF3;
-            --blue-400: #529DE8;
-            --blue-500: #1F78CC;
-            --blue-600: #17598F;
-            --blue-700: #0F3D57;
-            --blue-800: #08212C;
-            --blue-900: #020C0F;
+            /* Brand Colors */
+            --brand-qualia-01: #6DC278; --brand-clear-01: #6E54FA; --brand-marketplace: #E36333;
+            --brand-assure: #076596; --brand-atlas: #E3B529; --brand-connect: #4FC7AB;
             
-            /* Red Scale */
-            --red-100: #FFEBEB;
-            --red-200: #FDDCDB;
-            --red-300: #FAB8B5;
-            --red-400: #F2807C;
-            --red-500: #E63B3B;
-            --red-600: #BD1C21;
-            --red-700: #84161F;
-            --red-800: #561216;
-            --red-900: #3A0C11;
+            /* Semantic Colors */
+            --surface-01: var(--black-25); --surface-02: var(--black-75); --surface-success: var(--green-100);
+            --interactive-01-semantic: var(--green-500); --interactive-error: #BD1C21; --interactive-ai: #6E54FA;
+            --text-01: var(--black-1000); --text-02: var(--black-700); --text-03: var(--black-500); --text-04: var(--black-25);
+            --stroke-01: var(--black-100); --stroke-02: var(--black-300);
             
-            /* Yellow Scale */
-            --yellow-100: #FAF5E3;
-            --yellow-200: #F0E3B5;
-            --yellow-300: #E8D187;
-            --yellow-400: #D9B343;
-            --yellow-500: #D4A62E;
-            --yellow-600: #D19C29;
-            --yellow-700: #D18C26;
-            --yellow-800: #CE7E1F;
-            --yellow-900: #CC6215;
+            /* Spacing */
+            --space-04: 4px; --space-08: 8px; --space-16: 16px; --space-24: 24px; --space-32: 32px; --space-48: 48px;
             
-            /* Purple Scale */
-            --purple-100: #EEE9FF;
-            --purple-200: #D1C4FC;
-            --purple-300: #B09EFC;
-            --purple-400: #8F76FC;
-            --purple-500: #6E54FA;
-            --purple-600: #5721F7;
-            --purple-700: #4410CF;
-            --purple-800: #3A0F9C;
-            --purple-900: #2E0F7A;
-
-            /* Brand Colors (specific hex for direct use if needed) */
-            --brand-qualia-01: #6DC278;
-            --brand-qualia-02: #3D4042;
-            --brand-assure: #076596;
-            --brand-atlas: #E3B529;
-            --brand-clear-01: #6E54FA;
-            --brand-clear-02: #333333;
-            --brand-connect: #4FC7AB;
-            --brand-core: #4DB07D;
-            --brand-marketplace: #E36333;
-            --brand-shield: #3098E3;
-            --brand-resware: #A12A1C;
-            --brand-universal: #212729;
-            --brand-universal-inverted: #FFFFFF;
-
-            /* All semantic and spacing tokens from your original file... */
-            /* Complete styles will be here */
+            /* Typography */
+            --font-family-lato: 'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            --font-weight-regular: 400; --font-weight-medium: 500; --font-weight-bold: 700;
+            --header-xxl-size: 32px; --header-l-size: 22px; --body-size: 16px;
+            
+            /* Border Radius */
+            --radius-xs: 4px; --radius-s: 8px; --radius-m: 12px; --radius-l: 16px;
         }
-        /* Complete styles from your original file will be copied here */
+
+        * { box-sizing: border-box; }
+
+        body {
+            font-family: var(--font-family-lato);
+            margin: 0; padding: 0;
+            background: #f8f9fa;
+            color: var(--text-01);
+        }
+
+        .header {
+            background: linear-gradient(135deg, var(--qualia-green) 0%, var(--green-600) 100%);
+            color: white; text-align: center; padding: 60px 20px;
+        }
+        .header h1 { font-size: var(--header-xxl-size); font-weight: var(--font-weight-bold); margin-bottom: 12px; }
+        .header p { margin: 0; opacity: 0.9; }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; }
+        
+        .section {
+            background: white; border-radius: var(--radius-l); padding: 40px;
+            margin-bottom: 32px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        .section-title { font-size: var(--header-l-size); font-weight: var(--font-weight-bold); margin-bottom: 16px; }
+        .section-description { color: var(--text-02); margin-bottom: 32px; line-height: 1.6; }
+
+        .token-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px;
+        }
+
+        .token-card {
+            background: var(--surface-01); border: 1px solid var(--stroke-01);
+            border-radius: var(--radius-s); overflow: hidden;
+            transition: all 0.2s ease; position: relative;
+        }
+        .token-card:hover {
+            border-color: var(--stroke-02); box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transform: translateY(-2px);
+        }
+
+        .color-swatch { height: 80px; position: relative; cursor: pointer; }
+        .token-info { padding: 16px; }
+        .token-name {
+            font-family: 'Monaco', monospace; font-size: 14px; font-weight: 600;
+            margin-bottom: 4px;
+        }
+        .token-value {
+            font-family: 'Monaco', monospace; font-size: 12px;
+            color: var(--text-03); margin-bottom: 8px;
+        }
+        .token-usage { font-size: 13px; color: var(--text-02); line-height: 1.4; }
+
+        .copy-button {
+            position: absolute; top: 8px; right: 8px;
+            background: var(--text-01); color: var(--text-04);
+            border: none; border-radius: var(--radius-xs);
+            padding: 4px 8px; font-size: 11px; cursor: pointer;
+            opacity: 0; transition: all 0.2s;
+        }
+        .token-card:hover .copy-button { opacity: 1; }
+        .copy-button:hover { background: var(--interactive-01); }
+
+        .red-flags {
+            background: var(--surface-error); border: 1px solid var(--interactive-error);
+            border-radius: var(--radius-m); padding: 24px; margin-bottom: 32px;
+        }
+        .red-flags h2 { color: var(--interactive-error); margin-top: 0; }
+        .red-flags ul { color: var(--text-02); }
+
+        .demo-section {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            border-radius: var(--radius-l); padding: 40px; text-align: center;
+        }
+
+        .cta-button {
+            background: var(--interactive-01); color: var(--text-04);
+            border: none; border-radius: var(--radius-s);
+            padding: var(--space-16) var(--space-32); font-size: 16px; font-weight: var(--font-weight-medium);
+            cursor: pointer; transition: all 0.2s; text-decoration: none;
+            display: inline-block; margin: var(--space-08);
+        }
+        .cta-button:hover {
+            background: var(--green-700); transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(26,135,79,0.3);
+        }
+
+        @media (max-width: 768px) {
+            .container { padding: 20px; }
+            .section { padding: 24px; }
+            .token-grid { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
-    <!-- Your complete HTML structure -->
+    <div class="header">
+        <h1>🎨 Qualia Design Tokens</h1>
+        <p>Interactive reference for designers and developers - Optimized for GitHub Pages</p>
+    </div>
+
+    <div class="container">
+        <div class="red-flags">
+            <h2>🚩 Red Flags: When to Ask for Help</h2>
+            <ul>
+                <li>You're thinking about creating a new color</li>
+                <li>You can't find the right semantic token</li>
+                <li>You're using primitive colors directly (Green/500)</li>
+                <li>Your design needs spacing that's not on the scale</li>
+            </ul>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">🎨 Primitive Colors</h2>
+            <p class="section-description">
+                Foundation colors organized by hue. <strong>Use semantic tokens instead of primitive colors directly.</strong>
+            </p>
+
+            <h3>Black Scale</h3>
+            <div class="token-grid">
+                <div class="token-card">
+                    <div class="color-swatch" style="background: var(--black-25); border-bottom: 1px solid var(--stroke-01);"></div>
+                    <div class="token-info">
+                        <div class="token-name">black-25</div>
+                        <div class="token-value">#FAFAFA</div>
+                    </div>
+                    <button class="copy-button" onclick="copyToClipboard('#FAFAFA')">Copy</button>
+                </div>
+                <div class="token-card">
+                    <div class="color-swatch" style="background: var(--black-500); color: white;"></div>
+                    <div class="token-info">
+                        <div class="token-name">black-500</div>
+                        <div class="token-value">#757575</div>
+                    </div>
+                    <button class="copy-button" onclick="copyToClipboard('#757575')">Copy</button>
+                </div>
+                <div class="token-card">
+                    <div class="color-swatch" style="background: var(--black-1000); color: white;"></div>
+                    <div class="token-info">
+                        <div class="token-name">black-1000</div>
+                        <div class="token-value">#080808</div>
+                    </div>
+                    <button class="copy-button" onclick="copyToClipboard('#080808')">Copy</button>
+                </div>
+            </div>
+
+            <h3>Green Scale</h3>
+            <div class="token-grid">
+                <div class="token-card">
+                    <div class="color-swatch" style="background: var(--green-100); color: var(--green-700);"></div>
+                    <div class="token-info">
+                        <div class="token-name">green-100</div>
+                        <div class="token-value">#C4EBD4</div>
+                    </div>
+                    <button class="copy-button" onclick="copyToClipboard('#C4EBD4')">Copy</button>
+                </div>
+                <div class="token-card">
+                    <div class="color-swatch" style="background: var(--green-500); color: white;"></div>
+                    <div class="token-info">
+                        <div class="token-name">green-500</div>
+                        <div class="token-value">#1A874F</div>
+                        <div class="token-usage">Main brand green</div>
+                    </div>
+                    <button class="copy-button" onclick="copyToClipboard('#1A874F')">Copy</button>
+                </div>
+                <div class="token-card">
+                    <div class="color-swatch" style="background: var(--green-700); color: white;"></div>
+                    <div class="token-info">
+                        <div class="token-name">green-700</div>
+                        <div class="token-value">#0D381F</div>
+                    </div>
+                    <button class="copy-button" onclick="copyToClipboard('#0D381F')">Copy</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">🏢 Brand Colors</h2>
+            <p class="section-description">
+                Colors representing Qualia's product ecosystem. Use for brand recognition and product navigation.
+            </p>
+
+            <div class="token-grid">
+                <div class="token-card">
+                    <div class="color-swatch" style="background: var(--brand-qualia-01); color: white;"></div>
+                    <div class="token-info">
+                        <div class="token-name">qualia-01</div>
+                        <div class="token-value">#6DC278</div>
+                        <div class="token-usage">Primary Qualia brand</div>
+                    </div>
+                    <button class="copy-button" onclick="copyToClipboard('#6DC278')">Copy</button>
+                </div>
+                <div class="token-card">
+                    <div class="color-swatch" style="background: var(--brand-clear-01); color: white;"></div>
+                    <div class="token-info">
+                        <div class="token-name">clear-01</div>
+                        <div class="token-value">#6E54FA</div>
+                        <div class="token-usage">Clear product</div>
+                    </div>
+                    <button class="copy-button" onclick="copyToClipboard('#6E54FA')">Copy</button>
+                </div>
+                <div class="token-card">
+                    <div class="color-swatch" style="background: var(--brand-marketplace); color: white;"></div>
+                    <div class="token-info">
+                        <div class="token-name">marketplace</div>
+                        <div class="token-value">#E36333</div>
+                        <div class="token-usage">Marketplace product</div>
+                    </div>
+                    <button class="copy-button" onclick="copyToClipboard('#E36333')">Copy</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">⚡ Interactive Colors</h2>
+            <p class="section-description">
+                Semantic colors for interactive elements. Always prioritize these over primitive colors.
+            </p>
+
+            <div class="token-grid">
+                <div class="token-card">
+                    <div class="color-swatch" style="background: var(--interactive-01-semantic); color: white;"></div>
+                    <div class="token-info">
+                        <div class="token-name">interactive_01</div>
+                        <div class="token-value">#1A874F</div>
+                        <div class="token-usage">Primary buttons, main actions</div>
+                    </div>
+                    <button class="copy-button" onclick="copyToClipboard('var(--interactive-01-semantic)')">Copy</button>
+                </div>
+                <div class="token-card">
+                    <div class="color-swatch" style="background: var(--interactive-error); color: white;"></div>
+                    <div class="token-info">
+                        <div class="token-name">interactive_error</div>
+                        <div class="token-value">#BD1C21</div>
+                        <div class="token-usage">Destructive actions</div>
+                    </div>
+                    <button class="copy-button" onclick="copyToClipboard('var(--interactive-error)')">Copy</button>
+                </div>
+                <div class="token-card">
+                    <div class="color-swatch" style="background: var(--interactive-ai); color: white;"></div>
+                    <div class="token-info">
+                        <div class="token-name">interactive_ai</div>
+                        <div class="token-value">#6E54FA</div>
+                        <div class="token-usage">AI-powered features</div>
+                    </div>
+                    <button class="copy-button" onclick="copyToClipboard('var(--interactive-ai)')">Copy</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="demo-section">
+            <h2>🚀 Complete Interactive Experience</h2>
+            <p style="margin-bottom: 32px;">
+                This is an optimized version for GitHub Pages. Your complete work includes decision trees, 
+                comprehensive color scales, spacing visualization, and interactive button demos.
+            </p>
+            <a href="button-demo.html" class="cta-button">🎛️ Interactive Button Demo</a>
+            <a href="https://github.com/DesignTinker27/qualia-tokens-for-engineering" class="cta-button">🛠️ Engineering Tokens</a>
+        </div>
+
+        <div style="text-align: center; background: var(--surface-success); border-radius: var(--radius-l); padding: 40px; margin-top: 40px;">
+            <h2 style="color: var(--green-700); margin-bottom: 16px;">Ready to Implement?</h2>
+            <p style="margin-bottom: 32px;">Get the engineering-ready tokens and start building consistently.</p>
+            <a href="https://github.com/DesignTinker27/qualia-tokens-for-engineering" class="cta-button">
+                📦 Download Complete Package
+            </a>
+        </div>
+    </div>
+
+    <script>
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                // Find and update the button that was clicked
+                const buttons = document.querySelectorAll('.copy-button');
+                buttons.forEach(btn => {
+                    if (btn.onclick && btn.onclick.toString().includes(text.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'))) {
+                        btn.textContent = 'Copied!';
+                        btn.style.background = 'var(--green-600)';
+                        setTimeout(() => {
+                            btn.textContent = 'Copy';
+                            btn.style.background = 'var(--text-01)';
+                        }, 2000);
+                    }
+                });
+            });
+        }
+
+        // Add click-to-copy for color swatches
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.color-swatch').forEach(swatch => {
+                swatch.title = 'Click to copy hex value';
+                swatch.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    const tokenCard = this.closest('.token-card');
+                    const valueElement = tokenCard.querySelector('.token-value');
+                    if (valueElement) {
+                        copyToClipboard(valueElement.textContent);
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
