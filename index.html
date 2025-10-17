@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qualia Design Tokens - Interactive Demo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Import tokens */
+        :root {
+            /* Primitive Colors */
+            --primitive-white: #FFFFFF;
+            --primitive-black: #000000;
+            --primitive-gray-50: #F9FAFB;
+            --primitive-gray-100: #F3F4F6;
+            --primitive-gray-200: #E5E7EB;
+            --primitive-gray-300: #D1D5DB;
+            --primitive-gray-400: #9CA3AF;
+            --primitive-gray-500: #6B7280;
+            --primitive-gray-600: #4B5563;
+            --primitive-gray-700: #374151;
+            --primitive-gray-800: #1F2937;
+            --primitive-gray-900: #111827;
+            --primitive-red-50: #FEF2F2;
+            --primitive-red-100: #FEE2E2;
+            --primitive-red-200: #FECACA;
+            --primitive-red-300: #FCA5A5;
+            --primitive-red-400: #F87171;
+            --primitive-red-500: #EF4444;
+            --primitive-red-600: #DC2626;
+            --primitive-red-700: #B91C1C;
+            --primitive-red-800: #991B1B;
+            --primitive-red-900: #7F1D1D;
+            --primitive-green-50: #F0FDF4;
+            --primitive-green-100: #DCFCE7;
+            --primitive-green-200: #BBF7D0;
+            --primitive-green-300: #86EFAC;
+            --primitive-green-400: #4ADE80;
+            --primitive-green-500: #22C55E;
+            --primitive-green-600: #16A34A;
+            --primitive-green-700: #15803D;
+            --primitive-green-800: #166534;
+            --primitive-green-900: #14532D;
+            --primitive-blue-50: #EFF6FF;
+            --primitive-blue-100: #DBEAFE;
+            --primitive-blue-200: #BFDBFE;
+            --primitive-blue-300: #93C5FD;
+            --primitive-blue-400: #60A5FA;
+            --primitive-blue-500: #3B82F6;
+            --primitive-blue-600: #2563EB;
+            --primitive-blue-700: #1D4ED8;
+            --primitive-blue-800: #1E40AF;
+            --primitive-blue-900: #1E3A8A;
+            --primitive-orange-50: #FFF7ED;
+            --primitive-orange-100: #FFEDD5;
+            --primitive-orange-200: #FED7AA;
+            --primitive-orange-300: #FDBA74;
+            --primitive-orange-400: #FB923C;
+            --primitive-orange-500: #F97316;
+            --primitive-orange-600: #EA580C;
+            --primitive-orange-700: #C2410C;
+            --primitive-orange-800: #9A3412;
+            --primitive-orange-900: #7C2D12;
+
+            /* Brand Colors */
+            --brand-primary: #22C55E;
+            --brand-secondary: #16A34A;
+            --brand-accent: #86EFAC;
+
+            /* Semantic Colors */
+            --semantic-success: var(--primitive-green-600);
+            --semantic-warning: var(--primitive-orange-500);
+            --semantic-error: var(--primitive-red-600);
+            --semantic-info: var(--primitive-blue-500);
+            
+            /* Interactive Colors */
+            --interactive-primary: var(--brand-primary);
+            --interactive-primary-hover: var(--brand-secondary);
+            --interactive-primary-active: var(--primitive-green-700);
+            --interactive-secondary: var(--primitive-gray-100);
+            --interactive-secondary-hover: var(--primitive-gray-200);
+            --interactive-secondary-active: var(--primitive-gray-300);
+            --interactive-destructive: var(--primitive-red-600);
+            --interactive-destructive-hover: var(--primitive-red-700);
+            --interactive-destructive-active: var(--primitive-red-800);
+            --interactive-success: var(--primitive-green-600);
+            --interactive-success-hover: var(--primitive-green-700);
+            --interactive-success-active: var(--primitive-green-800);
+            --interactive-ai: var(--primitive-blue-600);
+            --interactive-ai-hover: var(--primitive-blue-700);
+            --interactive-ai-active: var(--primitive-blue-800);
+            
+            /* Surface Colors */
+            --surface-background: var(--primitive-white);
+            --surface-foreground: var(--primitive-gray-900);
+            --surface-muted: var(--primitive-gray-50);
+            --surface-card: var(--primitive-white);
+            --surface-border: var(--primitive-gray-200);
+            
+            /* Text Colors */
+            --text-primary: var(--primitive-gray-900);
+            --text-secondary: var(--primitive-gray-600);
+            --text-muted: var(--primitive-gray-400);
+            --text-inverse: var(--primitive-white);
+            
+            /* Spacing */
+            --spacing-xs: 4px;
+            --spacing-sm: 8px;
+            --spacing-md: 16px;
+            --spacing-lg: 24px;
+            --spacing-xl: 32px;
+            --spacing-2xl: 48px;
+            --spacing-3xl: 64px;
+            
+            /* Typography */
+            --font-family-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            --font-family-mono: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', monospace;
+            
+            --font-size-xs: 12px;
+            --font-size-sm: 14px;
+            --font-size-md: 16px;
+            --font-size-lg: 18px;
+            --font-size-xl: 20px;
+            --font-size-2xl: 24px;
+            --font-size-3xl: 30px;
+            --font-size-4xl: 36px;
+            
+            --font-weight-normal: 400;
+            --font-weight-medium: 500;
+            --font-weight-semibold: 600;
+            --font-weight-bold: 700;
+            
+            --line-height-tight: 1.25;
+            --line-height-normal: 1.5;
+            --line-height-relaxed: 1.75;
+            
+            /* Border Radius */
+            --border-radius-none: 0px;
+            --border-radius-sm: 4px;
+            --border-radius-md: 8px;
+            --border-radius-lg: 12px;
+            --border-radius-xl: 16px;
+            --border-radius-full: 9999px;
+        }
+
+        /* Base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-family-primary);
+            background-color: var(--surface-background);
+            color: var(--text-primary);
+            line-height: var(--line-height-normal);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: var(--spacing-2xl);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: var(--spacing-3xl);
+        }
+
+        .header h1 {
+            font-size: var(--font-size-4xl);
+            font-weight: var(--font-weight-bold);
+            color: var(--brand-primary);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .header p {
+            font-size: var(--font-size-lg);
+            color: var(--text-secondary);
+        }
+
+        .section {
+            margin-bottom: var(--spacing-3xl);
+            background: var(--surface-card);
+            border: 1px solid var(--surface-border);
+            border-radius: var(--border-radius-lg);
+            padding: var(--spacing-2xl);
+        }
+
+        .section-title {
+            font-size: var(--font-size-2xl);
+            font-weight: var(--font-weight-semibold);
+            margin-bottom: var(--spacing-lg);
+            color: var(--text-primary);
+        }
+
+        .color-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: var(--spacing-lg);
+        }
+
+        .color-swatch {
+            display: flex;
+            flex-direction: column;
+            border-radius: var(--border-radius-md);
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .swatch-color {
+            height: 80px;
+            width: 100%;
+        }
+
+        .swatch-info {
+            padding: var(--spacing-md);
+            background: var(--surface-card);
+        }
+
+        .swatch-name {
+            font-weight: var(--font-weight-medium);
+            font-size: var(--font-size-sm);
+            margin-bottom: var(--spacing-xs);
+        }
+
+        .swatch-value {
+            font-family: var(--font-family-mono);
+            font-size: var(--font-size-xs);
+            color: var(--text-muted);
+        }
+
+        .spacing-demo {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-md);
+            align-items: flex-end;
+        }
+
+        .spacing-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+
+        .spacing-visual {
+            background: var(--brand-primary);
+            border-radius: var(--border-radius-sm);
+        }
+
+        .spacing-label {
+            font-size: var(--font-size-xs);
+            color: var(--text-secondary);
+            font-weight: var(--font-weight-medium);
+        }
+
+        .typography-demo {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-lg);
+        }
+
+        .type-sample {
+            border-bottom: 1px solid var(--surface-border);
+            padding-bottom: var(--spacing-md);
+        }
+
+        .type-sample:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .type-label {
+            font-size: var(--font-size-xs);
+            color: var(--text-muted);
+            margin-bottom: var(--spacing-xs);
+            font-family: var(--font-family-mono);
+        }
+
+        .decision-tree {
+            background: var(--surface-muted);
+            border-radius: var(--border-radius-md);
+            padding: var(--spacing-lg);
+            margin-top: var(--spacing-lg);
+        }
+
+        .decision-tree h3 {
+            color: var(--text-primary);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .decision-tree ol {
+            padding-left: var(--spacing-lg);
+        }
+
+        .decision-tree li {
+            margin-bottom: var(--spacing-sm);
+            color: var(--text-secondary);
+        }
+
+        .button-demo {
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-md);
+        }
+
+        .demo-button {
+            padding: var(--spacing-sm) var(--spacing-md);
+            border-radius: var(--border-radius-md);
+            border: 1px solid transparent;
+            font-family: var(--font-family-primary);
+            font-weight: var(--font-weight-medium);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .demo-button.primary {
+            background: var(--interactive-primary);
+            color: var(--text-inverse);
+        }
+
+        .demo-button.primary:hover {
+            background: var(--interactive-primary-hover);
+        }
+
+        .demo-button.secondary {
+            background: var(--interactive-secondary);
+            color: var(--text-primary);
+            border-color: var(--surface-border);
+        }
+
+        .demo-button.secondary:hover {
+            background: var(--interactive-secondary-hover);
+        }
+
+        .demo-button.destructive {
+            background: var(--interactive-destructive);
+            color: var(--text-inverse);
+        }
+
+        .demo-button.destructive:hover {
+            background: var(--interactive-destructive-hover);
+        }
+
+        .demo-button.success {
+            background: var(--interactive-success);
+            color: var(--text-inverse);
+        }
+
+        .demo-button.success:hover {
+            background: var(--interactive-success-hover);
+        }
+
+        .demo-button.ai {
+            background: var(--interactive-ai);
+            color: var(--text-inverse);
+        }
+
+        .demo-button.ai:hover {
+            background: var(--interactive-ai-hover);
+        }
+
+        .red-flags {
+            background: var(--primitive-red-50);
+            border: 1px solid var(--primitive-red-200);
+            border-radius: var(--border-radius-md);
+            padding: var(--spacing-lg);
+            margin-top: var(--spacing-lg);
+        }
+
+        .red-flags h3 {
+            color: var(--semantic-error);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .red-flags ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .red-flags li {
+            margin-bottom: var(--spacing-sm);
+            color: var(--text-secondary);
+        }
+
+        .red-flags li:before {
+            content: '❌';
+            margin-right: var(--spacing-sm);
+        }
+
+        code {
+            background: var(--surface-muted);
+            padding: 2px var(--spacing-xs);
+            border-radius: var(--border-radius-sm);
+            font-family: var(--font-family-mono);
+            font-size: var(--font-size-xs);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Qualia Design Tokens</h1>
+            <p>Interactive visual reference for designers and developers</p>
+        </div>
+
+        <div class="section" id="primitives">
+            <h2 class="section-title">Primitive Colors</h2>
+            <p style="margin-bottom: var(--spacing-lg); color: var(--text-secondary);">Foundation colors that should not be used directly in components. Use semantic or interactive tokens instead.</p>
+            
+            <div class="color-grid">
+                <div class="color-swatch">
+                    <div class="swatch-color" style="background-color: var(--primitive-white); border: 1px solid var(--surface-border);"></div>
+                    <div class="swatch-info">
+                        <div class="swatch-name">White</div>
+                        <div class="swatch-value">#FFFFFF</div>
+                    </div>
+                </div>
+                <div class="color-swatch">
+                    <div class="swatch-color" style="background-color: var(--primitive-black);"></div>
+                    <div class="swatch-info">
+                        <div class="swatch-name">Black</div>
+                        <div class="swatch-value">#000000</div>
+                    </div>
+                </div>
+                <div class="color-swatch">
+                    <div class="swatch-color" style="background-color: var(--primitive-gray-50);"></div>
+                    <div class="swatch-info">
+                        <div class="swatch-name">Gray 50</div>
+                        <div class="swatch-value">#F9FAFB</div>
+                    </div>
+                </div>
+                <div class="color-swatch">
+                    <div class="swatch-color" style="background-color: var(--primitive-gray-100);"></div>
+                    <div class="swatch-info">
+                        <div class="swatch-name">Gray 100</div>
+                        <div class="swatch-value">#F3F4F6</div>
+                    </div>
+                </div>
+                <div class="color-swatch">
+                    <div class="swatch-color" style="background-color: var(--primitive-gray-200);"></div>
+                    <div class="swatch-info">
+                        <div class="swatch-name">Gray 200</div>
+                        <div class="swatch-value">#E5E7EB</div>
+                    </div>
+                </div>
+                <div class="color-swatch">
+                    <div class="swatch-color" style="background-color: var(--primitive-gray-300);"></div>
+                    <div class="swatch-info">
+                        <div class="swatch-name">Gray 300</div>
+                        <div class="swatch-value">#D1D5DB</div>
+                    </div>
+                </div>
+                <div class="color-swatch">
+                    <div class="swatch-color" style="background-color: var(--primitive-gray-400);"></div>
+                    <div class="swatch-info">
+                        <div class="swatch-name">Gray 400</div>
+                        <div class="swatch-value">#9CA3AF</div>
+                    </div>
+                </div>
+                <div class="color-swatch">
+                    <div class="swatch-color" style="background-color: var(--primitive-gray-500);"></div>
+                    <div class="swatch-info">
+                        <div class="swatch-name">Gray 500</div>
+                        <div class="swatch-value">#6B7280</div>
+                    </div>
+                </div>
+                <div class="color-swatch">
+                    <div class="swatch-color" style="background-color: var(--primitive-gray-600);"></div>
+                    <div class="swatch-info">
+                        <div class="swatch-name">Gray 600</div>
+                        <div class="swatch-value">#4B5563</div>
+                    </div>
+                </div>
+                <div class="color-swatch">
+                    <div class="swatch-color" style="background-color: var(--primitive-gray-700);"></div>
+                    <div class="swatch-info">
+                        <div class="swatch-name">Gray 700</div>
+                        <div class="swatch-value">#374151</div>
+                    </div>
+                </div>
+                <div class="color-swatch">
+                    <div class="swatch-color" style="background-color: var(--primitive-gray-800);"></div>
+                    <div class="swatch-info">
+                        <div class="swatch-name">Gray 800</div>
+                        <div class="swatch-value">#1F2937</div>
+                    </div>
+                </div>
+                <div class="color-swatch">
+                    <div class="swatch-color" style="background-color: var(--primitive-gray-900);"></div>
+                    <div class="swatch-info">
+                        <div class="swatch-name">Gray 900</div>
+                        <div class="swatch-value">#111827</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Brand Colors</h2>
+            <div class="color-grid">
+                <div class="color-swatch">
+                    <div class="swatch-color" style="background-color: var(--brand-primary);"></div>
+                    <div class="swatch-info">
+                        <div class="swatch-name">Primary</div>
+                        <div class="swatch-value">#22C55E</div>
+                    </div>
+                </div>
+                <div class="color-swatch">
+                    <div class="swatch-color" style="background-color: var(--brand-secondary);"></div>
+                    <div class="swatch-info">
+                        <div class="swatch-name">Secondary</div>
+                        <div class="swatch-value">#16A34A</div>
+                    </div>
+                </div>
+                <div class="color-swatch">
+                    <div class="swatch-color" style="background-color: var(--brand-accent);"></div>
+                    <div class="swatch-info">
+                        <div class="swatch-name">Accent</div>
+                        <div class="swatch-value">#86EFAC</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Interactive Colors</h2>
+            <p style="margin-bottom: var(--spacing-lg); color: var(--text-secondary);">Colors for buttons, links, and interactive elements.</p>
+            
+            <div class="button-demo">
+                <button class="demo-button primary">Primary Button</button>
+                <button class="demo-button secondary">Secondary Button</button>
+                <button class="demo-button destructive">Destructive Button</button>
+                <button class="demo-button success">Success Button</button>
+                <button class="demo-button ai">AI Button</button>
+            </div>
+
+            <div class="decision-tree">
+                <h3>🔀 Button Decision Tree</h3>
+                <ol>
+                    <li><strong>Most important action?</strong> → Use Primary</li>
+                    <li><strong>Dangerous/destructive action?</strong> → Use Destructive</li>
+                    <li><strong>Positive confirmation?</strong> → Use Success</li>
+                    <li><strong>AI-powered feature?</strong> → Use AI</li>
+                    <li><strong>Otherwise</strong> → Use Secondary</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Semantic Colors</h2>
+            <div class="color-grid">
+                <div class="color-swatch">
+                    <div class="swatch-color" style="background-color: var(--semantic-success);"></div>
+                    <div class="swatch-info">
+                        <div class="swatch-name">Success</div>
+                        <div class="swatch-value">#16A34A</div>
+                    </div>
+                </div>
+                <div class="color-swatch">
+                    <div class="swatch-color" style="background-color: var(--semantic-warning);"></div>
+                    <div class="swatch-info">
+                        <div class="swatch-name">Warning</div>
+                        <div class="swatch-value">#F97316</div>
+                    </div>
+                </div>
+                <div class="color-swatch">
+                    <div class="swatch-color" style="background-color: var(--semantic-error);"></div>
+                    <div class="swatch-info">
+                        <div class="swatch-name">Error</div>
+                        <div class="swatch-value">#DC2626</div>
+                    </div>
+                </div>
+                <div class="color-swatch">
+                    <div class="swatch-color" style="background-color: var(--semantic-info);"></div>
+                    <div class="swatch-info">
+                        <div class="swatch-name">Info</div>
+                        <div class="swatch-value">#3B82F6</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Typography</h2>
+            <div class="typography-demo">
+                <div class="type-sample">
+                    <div class="type-label">font-size-4xl (36px) - Display Heading</div>
+                    <div style="font-size: var(--font-size-4xl); font-weight: var(--font-weight-bold);">The quick brown fox jumps</div>
+                </div>
+                <div class="type-sample">
+                    <div class="type-label">font-size-3xl (30px) - Hero Heading</div>
+                    <div style="font-size: var(--font-size-3xl); font-weight: var(--font-weight-semibold);">The quick brown fox jumps</div>
+                </div>
+                <div class="type-sample">
+                    <div class="type-label">font-size-2xl (24px) - Page Heading</div>
+                    <div style="font-size: var(--font-size-2xl); font-weight: var(--font-weight-semibold);">The quick brown fox jumps</div>
+                </div>
+                <div class="type-sample">
+                    <div class="type-label">font-size-xl (20px) - Section Heading</div>
+                    <div style="font-size: var(--font-size-xl); font-weight: var(--font-weight-medium);">The quick brown fox jumps</div>
+                </div>
+                <div class="type-sample">
+                    <div class="type-label">font-size-md (16px) - Body Text</div>
+                    <div style="font-size: var(--font-size-md);">The quick brown fox jumps over the lazy dog</div>
+                </div>
+                <div class="type-sample">
+                    <div class="type-label">font-size-sm (14px) - Small Text</div>
+                    <div style="font-size: var(--font-size-sm); color: var(--text-secondary);">The quick brown fox jumps over the lazy dog</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2 class="section-title">Spacing Scale</h2>
+            <div class="spacing-demo">
+                <div class="spacing-item">
+                    <div class="spacing-visual" style="width: 4px; height: 32px;"></div>
+                    <div class="spacing-label">xs (4px)</div>
+                </div>
+                <div class="spacing-item">
+                    <div class="spacing-visual" style="width: 8px; height: 32px;"></div>
+                    <div class="spacing-label">sm (8px)</div>
+                </div>
+                <div class="spacing-item">
+                    <div class="spacing-visual" style="width: 16px; height: 32px;"></div>
+                    <div class="spacing-label">md (16px)</div>
+                </div>
+                <div class="spacing-item">
+                    <div class="spacing-visual" style="width: 24px; height: 32px;"></div>
+                    <div class="spacing-label">lg (24px)</div>
+                </div>
+                <div class="spacing-item">
+                    <div class="spacing-visual" style="width: 32px; height: 32px;"></div>
+                    <div class="spacing-label">xl (32px)</div>
+                </div>
+                <div class="spacing-item">
+                    <div class="spacing-visual" style="width: 48px; height: 32px;"></div>
+                    <div class="spacing-label">2xl (48px)</div>
+                </div>
+                <div class="spacing-item">
+                    <div class="spacing-visual" style="width: 64px; height: 32px;"></div>
+                    <div class="spacing-label">3xl (64px)</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="red-flags">
+            <h3>🚫 Red Flags - Don't Do This</h3>
+            <ul>
+                <li>Don't use primitive colors directly: <code>color: #22C55E</code></li>
+                <li>Don't hardcode spacing: <code>padding: 16px</code></li>
+                <li>Don't mix semantic meanings: Success color for error states</li>
+                <li>Don't use multiple primary buttons in the same view</li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        // Add copy-to-clipboard functionality
+        document.querySelectorAll('.swatch-value').forEach(element => {
+            element.addEventListener('click', () => {
+                navigator.clipboard.writeText(element.textContent);
+                element.style.background = 'var(--semantic-success)';
+                element.style.color = 'white';
+                setTimeout(() => {
+                    element.style.background = '';
+                    element.style.color = '';
+                }, 1000);
+            });
+        });
+    </script>
+</body>
+</html>
